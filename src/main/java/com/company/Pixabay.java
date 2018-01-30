@@ -1,4 +1,4 @@
-package com.checkmarx;
+package com.company;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,7 +21,7 @@ public class Pixabay {
      * @throws Exception
      */
     public String getUrlByTerm(String searchTerm) throws Exception {
-        String httpsURL = Constants.PIXABAY_URL + "api/?key=" + Constants.PIXABAY_KEY + "=" + searchTerm + "&image_type=photo&pretty=true";
+        String httpsURL = Constants.PIXABAY_URL + "api/?key=" + Constants.PIXABAY_KEY + "&q=" + searchTerm + "&image_type=photo&pretty=true";
         URL myUrl = new URL(httpsURL);
         HttpsURLConnection conn = (HttpsURLConnection) myUrl.openConnection();
         InputStream is = conn.getInputStream();

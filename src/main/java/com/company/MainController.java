@@ -1,4 +1,4 @@
-package com.checkmarx;
+package com.company;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

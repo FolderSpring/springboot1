@@ -1,4 +1,4 @@
-package com.checkmarx;
+package com.company;
 
 public class Image {
 
