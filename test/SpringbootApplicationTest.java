@@ -79,12 +79,25 @@ public class SpringbootApplicationTest {
 //                .andExpect(jsonPath("$.message").value("Hello World John Doe!!!"));
     }
 
+    /**
+     * Send POST Request
+     * @throws Exception
+     */
     @Test
     public void givenGreetURIWithPost_whenMockMVC_thenVerifyResponse() throws Exception {
         this.mockMvc.perform(post("/greet")).andDo(print())
                 .andExpect(status().isOk()).andExpect(content()
                 .contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.message").value("Hello World!!!"));
+    }
+
+    @Test
+    public void givenGreetURIWithPostAndFormData_whenMockMVC_thenResponseOK() throws Exception {
+        this.mockMvc.perform(post("/greetParams")
+                .param("name", "John").param("surname", "Doe")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(jsonPath("$.message").value("Hello World John Doe!!!"))
+                .andExpect(jsonPath("$.id").value(1));
     }
 
 }

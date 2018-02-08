@@ -80,7 +80,7 @@ public class MainController {
         return "{\"id\": 1, \"message\": \"Hello World " + name + "!!!\"}";
     }
 
-    @RequestMapping(value = "/greetParams", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/greetParams", method = {RequestMethod.GET, RequestMethod.POST}, produces = "application/json;charset=UTF-8")
     public String greetWithUrlParam(@RequestParam String name, @RequestParam String surname) {
         return "{\"id\": 1, \"message\": \"Hello World " + name + " " + surname + "!!!\"}";
     }
