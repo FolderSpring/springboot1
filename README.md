@@ -2,7 +2,8 @@
 
 <p>Aplication returns image according to a search term.</br>
     The image can be returned from 2 places: Database / pixabay API</p>
-<p>- / - info about service
+<p>- /greet</p>
+<p>- / - info about service</p>
 <p>- /getAllImages - returns list of all images in database</p>
 <p>- /getImage/{term} - returns image by term. If term not exist in DB. Adding to DB value that received from
     pixabay</br></p>
